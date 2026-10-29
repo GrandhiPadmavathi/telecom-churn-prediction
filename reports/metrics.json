@@ -1,0 +1,225 @@
+{
+  "data": {
+    "customers": 7043,
+    "churn_rate": 0.2653698707936959,
+    "split": {
+      "train": 4225,
+      "valid": 1409,
+      "test": 1409
+    },
+    "features": 45
+  },
+  "champion": "logistic_regression",
+  "calibration": {
+    "logistic_regression": {
+      "chosen": "platt",
+      "cv_ece": {
+        "none": 0.026629225661775866,
+        "platt": 0.01726116350869457
+      }
+    },
+    "lightgbm": {
+      "chosen": "platt",
+      "cv_ece": {
+        "none": 0.020320085511425574,
+        "platt": 0.019232296180393713
+      }
+    }
+  },
+  "validation": {
+    "logistic_regression": {
+      "roc_auc": 0.8619390839339688,
+      "pr_auc": 0.6841931630139961,
+      "brier": 0.1289045077908966,
+      "ece": 0.018827232474130685,
+      "top10": {
+        "share": 0.1,
+        "precision": 0.7943262411347518,
+        "recall": 0.2994652406417112,
+        "lift": 2.9925285394622065
+      },
+      "top20": {
+        "share": 0.2,
+        "precision": 0.7092198581560284,
+        "recall": 0.5347593582887701,
+        "lift": 2.6719004816626843
+      },
+      "base_rate": 0.2654364797728886
+    },
+    "lightgbm": {
+      "roc_auc": 0.8617621225038105,
+      "pr_auc": 0.683032932259588,
+      "brier": 0.12841249798488732,
+      "ece": 0.01780596029738033,
+      "top10": {
+        "share": 0.1,
+        "precision": 0.8226950354609929,
+        "recall": 0.31016042780748665,
+        "lift": 3.099404558728714
+      },
+      "top20": {
+        "share": 0.2,
+        "precision": 0.7021276595744681,
+        "recall": 0.5294117647058824,
+        "lift": 2.6451814768460573
+      },
+      "base_rate": 0.2654364797728886
+    }
+  },
+  "test": {
+    "logistic_regression": {
+      "roc_auc": 0.8397788627967656,
+      "pr_auc": 0.6536794891250114,
+      "brier": 0.13845280943022806,
+      "ece": 0.028332575549517146,
+      "top10": {
+        "share": 0.1,
+        "precision": 0.723404255319149,
+        "recall": 0.2727272727272727,
+        "lift": 2.725338491295938
+      },
+      "top20": {
+        "share": 0.2,
+        "precision": 0.6453900709219859,
+        "recall": 0.48663101604278075,
+        "lift": 2.431429438313043
+      },
+      "base_rate": 0.2654364797728886
+    },
+    "lightgbm": {
+      "roc_auc": 0.8374706140690795,
+      "pr_auc": 0.6326138755691155,
+      "brier": 0.1405090463965101,
+      "ece": 0.03681948055835393,
+      "top10": {
+        "share": 0.1,
+        "precision": 0.7304964539007093,
+        "recall": 0.27540106951871657,
+        "lift": 2.752057496112565
+      },
+      "top20": {
+        "share": 0.2,
+        "precision": 0.6453900709219859,
+        "recall": 0.48663101604278075,
+        "lift": 2.431429438313043
+      },
+      "base_rate": 0.2654364797728886
+    }
+  },
+  "lightgbm_minus_logreg_ci": {
+    "roc_auc": [
+      -0.007936386617047356,
+      0.00387703159403943
+    ],
+    "pr_auc": [
+      -0.04016251325816088,
+      -0.00352457096325001
+    ]
+  },
+  "lightgbm_trees": 221,
+  "campaign": {
+    "assumptions": {
+      "contact_cost": 10.0,
+      "incentive_months": 1.0,
+      "save_rate": 0.3,
+      "horizon_months": 12.0
+    },
+    "policies": {
+      "call_nobody": {
+        "contacted": 0,
+        "contact_rate": 0.0,
+        "churners_reached": 0.0,
+        "precision": 0.0,
+        "value": 0.0,
+        "value_per_customer": 0.0
+      },
+      "call_everyone": {
+        "contacted": 1409,
+        "contact_rate": 1.0,
+        "churners_reached": 1.0,
+        "precision": 0.2654364797728886,
+        "value": -3653.7500000000095,
+        "value_per_customer": -2.5931511710432997
+      },
+      "top_10pct_by_risk": {
+        "contacted": 141,
+        "contact_rate": 0.10007097232079488,
+        "churners_reached": 0.2727272727272727,
+        "precision": 0.723404255319149,
+        "value": 16780.07,
+        "value_per_customer": 11.909205110007097
+      },
+      "top_20pct_by_risk": {
+        "contacted": 282,
+        "contact_rate": 0.20014194464158977,
+        "churners_reached": 0.48663101604278075,
+        "precision": 0.6453900709219859,
+        "value": 26739.559999999998,
+        "value_per_customer": 18.977686302342086
+      },
+      "positive_expected_value": {
+        "contacted": 504,
+        "contact_rate": 0.35770049680624555,
+        "churners_reached": 0.7379679144385026,
+        "precision": 0.5476190476190477,
+        "value": 33273.329999999994,
+        "value_per_customer": 23.61485450674237
+      }
+    },
+    "best_cutoff": {
+      "contact_rate": 0.3598296664300923,
+      "value": 33586.38999999999
+    }
+  },
+  "importance": {
+    "tenure": 0.6074,
+    "Contract=Month-to-month": 0.3315,
+    "Contract=Two year": 0.314,
+    "InternetService=Fiber optic": 0.269,
+    "new_customer": 0.2172,
+    "InternetService=DSL": 0.2155,
+    "PaperlessBilling": 0.1953,
+    "TotalCharges": 0.1336,
+    "OnlineSecurity=No": 0.1298,
+    "TechSupport=No": 0.1278,
+    "StreamingMovies=Yes": 0.1091,
+    "MonthlyCharges": 0.1065,
+    "avg_monthly_billed": 0.1042,
+    "Dependents": 0.1015,
+    "MultipleLines=No": 0.0978
+  },
+  "survival": {
+    "logrank": {
+      "chi2": 2352.872538259338,
+      "df": 2,
+      "p_value": 0.0
+    },
+    "by_contract": {
+      "Month-to-month": {
+        "retained_12m": 0.703096636348866,
+        "retained_24m": 0.5859154739046674,
+        "median_months": 35.0
+      },
+      "One year": {
+        "retained_12m": 0.9908082040748656,
+        "retained_24m": 0.9782723764279151,
+        "median_months": null
+      },
+      "Two year": {
+        "retained_12m": 1.0,
+        "retained_24m": 1.0,
+        "median_months": null
+      }
+    }
+  },
+  "gender_audit": {
+    "Female": {
+      "contact_rate": 0.37815126050420167,
+      "churners_reached": 0.7391304347826086
+    },
+    "Male": {
+      "contact_rate": 0.3366906474820144,
+      "churners_reached": 0.7365269461077845
+    }
+  }
+}
